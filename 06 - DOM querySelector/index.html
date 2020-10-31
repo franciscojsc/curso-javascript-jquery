@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DOM - querySelector</title>
+</head>
+
+<body>
+
+    <div id="teste1">1</div>
+    <div class="teste2">2</div>
+    <div class="teste2">22</div>
+    <div class="teste2">222</div>
+    <p>teste3</p>
+    <p class="teste4">4</p>
+
+    <script>
+
+        /*
+         querySelector -> pode ser utilizado para buscar por id, class e tag,
+         mas possuir uma limitação se o elemento for um array será selecionado o primeiro elemento.
+         */
+
+        console.log(
+
+            document.querySelector("#teste1"),
+            document.querySelector(".teste2"),
+            document.querySelector("p"),
+            document.querySelector("p.teste4")
+
+        );
+
+    </script>
+</body>
+
+</html>
