@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DOM - Functions</title>
+</head>
+
+<body>
+
+
+    <script>
+
+        function nomeDaFuncao(valor) {
+            return valor;
+        }
+
+        console.log(nomeDaFuncao('oi'));
+
+        function calculaMedia(nota1, nota2, nota3) {
+            return (nota1 + nota2 + nota3) / 3;
+        }
+
+        const media = calculaMedia(1, 3, 5);
+        console.log(media);
+
+        function testeParamentos() {
+            console.log(arguments);
+        }
+
+        testeParamentos('olá')
+
+        var pessoa = {
+            nome: 'Francisco Chaves',
+            idade: 27,
+            profissao: 'devops',
+            cidade: 'Boquim'
+        };
+
+        function novaPessoa(novoObjetoPessoa) {
+
+            if (typeof novoObjetoPessoa == 'object') {
+                pessoa = novoObjetoPessoa;
+                return true;
+            } else {
+                return false;
+            }
+
+        }
+
+
+    </script>
+
+</body>
+
+</html>
