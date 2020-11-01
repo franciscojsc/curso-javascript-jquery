@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DOM - createElement</title>
+</head>
+
+<body>
+
+    <script>
+        /*createElement -> criar elementos na página*/
+
+        console.log(
+            document.createElement("div")
+        );
+
+        var img = document.createElement("img");
+        img.src = "//lorempixel.com/400/200";
+
+        console.log(
+            img
+        );
+
+        var p = document.createElement("p");
+        p.innerHTML = "olá, tudo bem?";
+
+        console.log(
+            img, p
+        );
+    </script>
+
+</body>
+
+</html>
