@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Eventos - hover</title>
+
+    <style>
+        .link {
+            color: red;
+        }
+
+        .tractive {
+            background-color: blue;
+        }
+    </style>
+</head>
+
+<body>
+
+    <a href='#' id='link'>
+        <h1>Olá humanos, tudo bem?</h1>
+    </a>
+
+    <table style='width: 100%;'>
+        <thead>
+            <th aling='left'>Nome</th>
+            <th aling='left'>Idade</th>
+        </thead>
+        <tbody>
+            <tr class="tr">
+                <td style='height: 30px;'>Alien</td>
+                <td style='height: 30px;'>2000</td>
+            </tr>
+            <tr class="tr">
+                <td style='height: 30px;'>Bixo papão</td>
+                <td style='height: 30px;'>1000</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+    <script>
+
+        var link = document.getElementById('link');
+        var trs = document.getElementsByClassName('tr');
+        //o classList é somente leitura, mas pode ser alterado com o add e remove
+        //https://developer.mozilla.org/pt-BR/docs/Web/API/Element/classList
+        link.addEventListener('mouseover', function () {
+            link.classList.add('link');
+        });
+
+        link.addEventListener('mouseleave', function () {
+            link.classList.remove('link');
+        });
+
+
+        //o this, faz referência ao elemeto atual dentro da função
+        for (let i = 0; i < trs.length; i++) {
+            trs[i].addEventListener('mouseover', function () {
+                //console.log(this);
+                this.classList.add("tractive");
+            });
+            trs[i].addEventListener('mouseleave', function () {
+                //console.log(this);
+                this.classList.remove("tractive");
+            });
+        }
+
+
+
+        //----------------------
+
+        for (let i = 0; i < 10; i++) {
+            let btn = document.createElement("button")
+            btn.innerHTML = "click";
+            btn.addEventListener('click', function () {
+                alert(i);
+            });
+            document.querySelector("body").appendChild(btn);
+        }
+    </script>
+
+</body>
+
+</html>
