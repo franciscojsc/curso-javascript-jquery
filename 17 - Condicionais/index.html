@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DOM - condicionais</title>
+</head>
+
+<body>
+
+    <script>
+
+        var tom = "gato";
+        var jerry = "rato";
+
+        if (tom == "rato") {
+            console.log("tom comer queijo");
+        } else if (tom == "gato") {
+            console.log("tom caça ", jerry);
+        } else {
+            console.log("Que desenho é esse?")
+        }
+
+
+        switch (jerry) {
+            case 'gato':
+                console.log("não acredito");
+                break;
+            case 'rato':
+                console.log("sim, agora sim");
+                break;
+            default:
+                console.log("Que animal é o jerry?");
+                break;
+        }
+    </script>
+
+</body>
+
+</html>
