@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DOM - parentNode</title>
+</head>
+
+<body>
+
+    <div id="linux">
+        <div class="ubuntu">
+            Ubuntu
+            <div class="elementaryos">elementary Os</div>
+        </div>
+        <div class="debian">Debian</div>
+    </div>
+
+    <script>
+        /*parentNode -> acessa um determinado elemento pai de um elemento*/
+
+        console.log(
+
+            document.querySelector(".elementaryos").parentNode.parentNode.parentNode
+
+        )
+
+        var node = document.querySelector(".elementaryos");
+        //Verificar se tem elemento pai, se tiver o proprio elemento é removido
+        if (node.parentNode) {
+            //acessa o elemento pai e depois remove o elemento anterior
+            node.parentNode.removeChild(node);
+        }
+
+    </script>
+
+</body>
+
+</html>
