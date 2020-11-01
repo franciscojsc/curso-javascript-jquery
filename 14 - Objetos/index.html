@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DOM - objetos</title>
+</head>
+
+<body>
+
+    <script>
+
+        //Criando objeto
+        var carro = {
+            placa: "AAD-4343",
+            modelo: "Sedan",
+            marca: "Hyundai",
+            opcionais: {
+                cambio: "aut.",
+                combustivel: "flex"
+            },
+            "outra-coisa": "coisa"
+        };
+
+        console.log(carro);
+
+        console.log(carro.modelo);
+
+        console.log(carro.opcionais);
+
+        console.log(carro.opcionais.cambio);
+
+        console.log(carro["outra-coisa"]);
+
+    </script>
+
+</body>
+
+</html>
