@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DOM - variáveis</title>
+</head>
+
+<body>
+
+    <script>
+
+        var nome = "Francisco";
+
+        function teste() {
+            nome = "rafael";
+        }
+
+        teste();
+
+        console.log(nome);
+
+        //const -> criar constante que não pode ter o seu valor alterado
+        const sobrenome = "Chaves";
+
+        var Semana = ["Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sábado", "Domingo"];
+
+        //let -> criar variáveis locais
+        for (let i = 0; i < Semana.length; i++) {
+            console.log(Semana[i]);
+        }
+
+    </script>
+
+</body>
+
+</html>
