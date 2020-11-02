@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Eventos - keypress</title>
+</head>
+
+<body>
+
+    <input type="text" id="text" />
+    <div id="result" style="display:none">é o enter uhu</div>
+
+    <script>
+
+        var text = document.getElementById("text");
+        var result = document.getElementById("result");
+
+        const TECLA_ENTER = 13;
+
+        text.addEventListener("keypress", function (evento) {
+            if (evento.keyCode == TECLA_ENTER) {
+                result.style.display = "block";
+            }
+        });
+
+    </script>
+
+</body>
+
+</html>
