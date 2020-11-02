@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Eventos - submit</title>
+    <style type="text/css">
+        .error {
+            border: 2px solid red;
+        }
+    </style>
+</head>
+
+<body>
+
+    <form action="#" method="post">
+        <input type="text" name="name" value="francisco" />
+        <input type="email" name="email" value="contato@franciscochaves.com.br" />
+        <button type="submit">enter</button>
+    </form>
+
+    <script>
+
+        var form = document.querySelector("form");
+
+        form.addEventListener("submit", function (evento) {
+            //previne a ação default(o refresher da página)
+            evento.preventDefault();
+
+            var isValid = true;
+
+            for (let i = 0; i < this.elements.length; i++) {
+
+                //elementos do form
+                var item = this.elements[i];
+
+                if (item.type !== "submit") {
+                    if (item.value == '') {
+                        item.classList.add("error");
+                        isValid = false;
+                    } else {
+                        item.classList.remove("error");
+                    }
+                }
+
+            }
+
+            return isValid;
+
+        });
+
+    </script>
+
+</body>
+
+</html>
