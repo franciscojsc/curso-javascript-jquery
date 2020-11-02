@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JQuery Position Offset</title>
+    <style type="text/css">
+        .container {
+            width: 500px;
+            height: 500px;
+            background-color: black;
+            position: absolute;
+            top: 200px;
+            left: 300px;
+            padding: 20px;
+        }
+
+        .item {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            display: inline-block;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+        <div class='item'></div>
+    </div>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        //https://api.jquery.com/position/ , https://api.jquery.com/offset/
+
+        var container = $('.container');
+        var item = $('.item');
+        //pegar a posicao em relação ao elemento pai
+        var posicao = item.position();
+
+        //pegar a posicao em relação ao elemento browser
+        var posicao2 = item.offset();
+
+        console.log(posicao.left, posicao.top);
+
+        console.log(posicao2.left, posicao2.top);
+
+    </script>
+</body>
+
+</html>
