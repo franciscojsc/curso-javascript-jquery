@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>JQuery Scroll ScrollTop</title>
+	<style>
+		* {
+			margin: 0;
+		}
+
+		body {
+			padding-top: 60px;
+		}
+
+		.menu {
+			width: 100%;
+			height: 50px;
+			padding: 0;
+			list-style: none;
+			background-color: black;
+			display: flex;
+			justify-content: space-around;
+			align-items: center;
+			position: fixed;
+			left: 0;
+			top: 0;
+		}
+
+		.menu li a {
+			color: #fff;
+			padding: 1.1rem 2rem;
+			text-transform: uppercase;
+			font-weight: bold;
+		}
+
+		.menu li a:hover {
+			background-color: pink;
+			color: black;
+		}
+
+		.item {
+			height: 1200px;
+		}
+
+		.btn {
+			border: 0;
+			background-color: black;
+			color: #fff;
+			padding: 1rem;
+			font-size: 1rem;
+			position: fixed;
+			bottom: 1rem;
+			right: 1rem;
+		}
+	</style>
+
+</head>
+
+<body>
+
+	<ul class="menu">
+		<li><a href="#empresa">Empresa</a></li>
+		<li><a href="#projetos">Projetos</a></li>
+		<li><a href="#contato">Contato</a></li>
+	</ul>
+
+	<div class="item">
+		<h2 id="empresa">Empresa</h2>
+	</div>
+	<div class="item">
+		<h2 id="projetos">projetos</h2>
+	</div>
+	<div class="item">
+		<h2 id="contato">Contato</h2>
+	</div>
+
+	<button class="btn">Subir</button>
+
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script>
+		//https://api.jquery.com/scroll/ , https://api.jquery.com/scrollTop/
+
+		let link = $(".menu li a");
+		let subir = $('.btn');
+
+		subir.hide();
+
+		$(window).scroll(function () {
+			let minhaPosicao = $(this).scrollTop();
+			if (minhaPosicao >= 1200) {
+				subir.fadeIn();
+			} else {
+				subir.fadeOut();
+			}
+		});
+
+		subir.on('click', function () {
+			$("html, body").animate({
+				scrollTop: 0
+			}, 500);
+		});
+
+		link.on('click', function () {
+			let seletor = $(this).attr('href');
+			let posicao = $(seletor).offset().top;
+			$("html, body").animate({
+				scrollTop: posicao - 60
+			}, 1000);
+		});
+
+	</script>
+</body>
+
+</html>
