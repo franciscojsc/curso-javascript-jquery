@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JQuery Eventos</title>
+    <style type="text/css">
+        .body {
+            background-color: #efefef;
+        }
+
+        .box {
+            position: relative;
+            left: 0;
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+        }
+
+        button {
+            font-size: 2rem;
+            background-color: #000;
+            color: #fff;
+            padding: 1rem 2rem;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="box"></div>
+    <hr />
+
+    <button id="next"> > Next </button>
+    <button id="prev"> > Prev </button>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        //http://api.jquery.com/category/events/
+
+        var box = $('.box');
+        var next = $('#next');
+        var prev = $('#prev');
+
+        /*
+         *  Existe duas forma de declara eventos no JQuery
+         */
+
+        /*
+         next.hover(function(){
+            console.log('HOVER');
+        });
+        */
+
+        //a mais recomendada
+        next.on('click', function () {
+            box.animate({
+                left: "800"
+            }, 1500);
+        });
+
+        prev.on('click', function () {
+            box.animate({
+                left: "0"
+            }, 1500);
+        });
+    </script>
+</body>
+
+</html>
