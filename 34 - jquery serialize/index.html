@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JQuery Serialize SerializeArray</title>
+    <style type="text/css">
+        label,
+        input {
+            position: relative;
+            left: 0;
+            width: 50%;
+            height: 10%;
+            display: flex;
+        }
+
+        button {
+            display: flex;
+            background-color: green;
+            color: white;
+            width: 80px;
+            height: 30px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <form action="#">
+        <label for="cep">CEP</label>
+        <input type="text" name="cep" id="cep" placeholder="0000-000" />
+
+        <label for="logradouro">Logradouro</label>
+        <input type="text" name="logradouro" id="logradouro" placeholder="Avenida exemplo de tal" />
+
+        <button>Submit</button>
+    </form>
+
+    <br>
+    <br>
+    <br>
+
+    <div class="resultado"></div>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        //https://api.jquery.com/serialize, https://api.jquery.com/serializeArray/
+
+        var form = $('form');
+        var resultado = $('.resultado');
+
+        form.on('submit', function (event) {
+
+            event.preventDefault();
+
+            var data = $(this).serialize();
+
+            resultado.text(data)
+
+            var data2 = $(this).serializeArray();
+
+            console.log(data2)
+        });
+
+    </script>
+</body>
+
+</html>
