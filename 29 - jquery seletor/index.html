@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JQuery Seletor</title>
+</head>
+
+<body>
+
+    <p class='p1'>Lorem2.</p>
+    <p class='p1'>Lorem2.</p>
+    <p class='p1'>Lorem2.</p>
+    <p class='p1'>Lorem2.</p>
+    <p>Lorem.</p>
+    <p id='p2'></p>
+    <p data-aula='p3'></p>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+
+        //http://api.jquery.com/category/selectors
+
+        var p = $('p');
+        console.log(p);
+
+        var p1 = $('.p1');
+        //var p1 = jQuery('.p1');
+        //var p1 = document.querySelector('.p1');
+        console.log(p1);
+
+        var p2 = $('#p2');
+        console.log(p2);
+
+        var p3 = $('[data-aula="p3"]');
+        console.log(p3);
+
+
+    </script>
+</body>
+
+</html>
